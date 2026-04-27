@@ -12,6 +12,8 @@ console.log("Then we enter runtime...");
 console.log("We then use event listeners for inputs from the following: Submit form, Reset form, filter by Sector, filter by Bathroom, filter by Water.");
 console.groupEnd();
 
+// comment
+
 console.group("---------- PROCESS ----------");
 console.log("We start by using the renderCampgrounds() function to display the array. All filters set to 'all'.");
 console.log("We use the following functions on demand:");
