@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Filter | App</title>
+    <meta name="author" content="Dan Wenger">
+    <meta name="robots" content="all">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- NAV BAR BEGIN -->
+    <header class="fixed-top bg-body-tertiary border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-center py-1 my-2">
+                <span class="align-items-center fs-4 me-md-auto text-decoration-non">Dan
+                    Wenger | Mod 3 Assignment</span>
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="intro.html" class="nav-link">Intro</a></li>
+                    <li class="nav-item"><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/"
+                            target="_blank" class="nav-link">Bootstrap <i class="bi bi-box-arrow-up-right"></i></a></li>
+                    <li class="nav-item"><a href="app.html" class="nav-link active" aria-current="page">Application</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- NAV BAR END -->
+
+    <!--  APP SECTION  -->
+    <div class="px-4 pt-5 my-5 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-compass"
+            viewBox="0 0 16 16">
+            <path
+                d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016m6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+            <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
+        </svg>
+        <h1 class="display-5 fw-bold text-body-emphasis">Campground Finder Application</h1>
+    </div>
+
+    <section id="app-window" class="px-4 py-5 my-5 text-left">
+        <div class="container">
+            <div class="row">
+
+                <!--  INPUT FORM  -->
+                <div class="col-12 mb-4">
+                    <div class="accordion" id="formAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="add-campground-header">
+                                <button class="accordion-button collapsed fs-3 fw-medium" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#add-campground-collapse"
+                                    aria-expanded="false" aria-controls="add-campground-collapse">
+                                    Add a New Campground
+                                </button>
+                            </h2>
+
+                            <div id="add-campground-collapse" class="accordion-collapse collapse"
+                                data-bs-parent="#formAccordion">
+                                <div class="accordion-body">
+                                    <form id="input-form" class="row g-3">
+
+                                        <div class="col-md-6">
+                                            <label for="campground-name-input" class="form-label fw-semibold">Campground
+                                                Name</label>
+                                            <input type="text" id="campground-name-input" class="form-control"
+                                                placeholder="e.g., Stoney Creek...">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="sector-input" class="form-label fw-semibold">Sector</label>
+                                            <select id="sector-input" class="form-select">
+                                                <option disabled selected>Choose sector</option>
+                                                <option value="us191">US-191</option>
+                                                <option value="us26">US-26</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label for="sites-total-input" class="form-label fw-semibold">Total
+                                                Sites</label>
+                                            <input type="number" id="sites-total-input" class="form-control"
+                                                placeholder="#">
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label for="sites-fc-input" class="form-label fw-semibold">First-Come
+                                                Sites</label>
+                                            <input type="number" id="sites-fc-input" class="form-control"
+                                                placeholder="#">
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label class="form-label fw-semibold d-block">Bathroom</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="has-wc-input"
+                                                    value="false">
+                                                <label class="form-check-label" for="has-wc-input">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label class="form-label fw-semibold d-block">Water</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="has-water-input"
+                                                    value="false">
+                                                <label class="form-check-label" for="has-water-input">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label for="map-url-input" class="form-label fw-semibold">Map Link</label>
+                                            <input type="url" id="map-url-input" class="form-control"
+                                                placeholder="https://goo.gl/maps/...">
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label for="image-url-input" class="form-label fw-semibold">Image
+                                                Link</label>
+                                            <input type="url" id="image-url-input" class="form-control"
+                                                placeholder="https://lh3.googleusercontent.com/gps...">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <button type="submit" id="submit-form" class="btn btn-primary me-2">Add
+                                                Campground</button>
+                                            <button type="reset" id="reset-form"
+                                                class="btn btn-outline-secondary px-4">Reset</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--  INPUT FORM END  -->
+
+                <!--  OUTPUT SECTION  -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <!--  TITLE AND FILTERS  -->
+                            <header>
+                                <h3 class="card-title">Available Campgrounds</h3>
+                                <div class="row g-3 mb-3 align-items-end">
+                                    <div class="col-12 col-md-4">
+                                        <div id="results-count" class="fs-5 fw-medium text-secondary pb-1">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-8">
+                                        <div class="row g-3">
+                                            <div class="col-12 col-md-4 text-md-end">
+                                                <label class="form-label d-block">Filter by Sector</label>
+                                                <div class="btn-group" role="group" aria-label="Filter by Sector"
+                                                    id="sector-filter">
+                                                    <input type="radio" class="btn-check" name="sector-filter"
+                                                        id="sector-filter-all" value="all" checked>
+                                                    <label class="btn btn-outline-secondary"
+                                                        for="sector-filter-all">All</label>
+
+                                                    <input type="radio" class="btn-check" name="sector-filter"
+                                                        id="sector-filter-us191" value="us191">
+                                                    <label class="btn btn-outline-secondary"
+                                                        for="sector-filter-us191">US-191</label>
+
+                                                    <input type="radio" class="btn-check" name="sector-filter"
+                                                        id="sector-filter-us26" value="us26">
+                                                    <label class="btn btn-outline-secondary"
+                                                        for="sector-filter-us26">US-26</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-md-4 text-md-end">
+                                                <label class="form-label d-block">Filter by Bathroom</label>
+                                                <div class="btn-group" role="group" aria-label="Filter by Bathroom"
+                                                    id="wc-filter">
+                                                    <input type="radio" class="btn-check" name="wc-filter"
+                                                        id="wc-filter-all" value="all" checked>
+                                                    <label class="btn btn-outline-secondary"
+                                                        for="wc-filter-all">All</label>
+
+                                                    <input type="radio" class="btn-check" name="wc-filter"
+                                                        id="wc-filter-yes" value="true">
+                                                    <label class="btn btn-outline-secondary"
+                                                        for="wc-filter-yes">Yes</label>
+
+                                                    <input type="radio" class="btn-check" name="wc-filter"
+                                                        id="wc-filter-no" value="false">
+                                                    <label class="btn btn-outline-secondary"
+                                                        for="wc-filter-no">No</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-md-4 text-md-end">
+                                                <label class="form-label d-block">Filter by Water</label>
+                                                <div class="btn-group" role="group" aria-label="Filter by Water"
+                                                    id="water-filter">
+                                                    <input type="radio" class="btn-check" name="water-filter"
+                                                        id="water-filter-all" value="all" checked>
+                                                    <label class="btn btn-outline-secondary"
+                                                        for="water-filter-all">All</label>
+
+                                                    <input type="radio" class="btn-check" name="water-filter"
+                                                        id="water-filter-yes" value="true">
+                                                    <label class="btn btn-outline-secondary"
+                                                        for="water-filter-yes">Yes</label>
+
+                                                    <input type="radio" class="btn-check" name="water-filter"
+                                                        id="water-filter-no" value="false">
+                                                    <label class="btn btn-outline-secondary"
+                                                        for="water-filter-no">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+
+                            <!--  DATA TABLE  -->
+                            <section>
+                                <div class="table-responsive mt-4">
+                                    <table class="table table-striped text-center">
+
+                                        <thead class="sticky-top">
+                                            <tr>
+                                                <th scope="col" class="d-none d-md-table-cell">Image</th>
+                                                <th scope="col">Sector</th>
+                                                <th scope="col" class="align-middle text-start">Name</th>
+                                                <th scope="col" class="d-none d-md-table-cell">Total Sites</th>
+                                                <th scope="col">FC Sites</th>
+                                                <th scope="col">WC</th>
+                                                <th scope="col">Water</th>
+                                                <th scope="col">Map</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody id="results-window">
+
+                                            <tr class="align-middle">
+
+                                                <!-- New Results Are Displayed Here -->
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+                <!--  END OUTPUT SECTION  -->
+
+            </div>
+        </div>
+    </section>
+    <!--  APP SECTION END -->
+
+    <footer class="footer fixed-bottom py-3 bg-body-tertiary">
+        <div class="container">
+            <span class="text-body-secondary">&copy; Dan Wenger 2026</span>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>
