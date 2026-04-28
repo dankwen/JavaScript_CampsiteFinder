@@ -114,13 +114,13 @@ function renderCampgrounds() {
             if (thisCampground.restrooms) {
                 thisCampground.restrooms = 'bi-badge-wc-fill text-success'
             } else {
-                thisCampground.restrooms = 'bi-badge-wc text-danger'
+                thisCampground.restrooms = 'bi-badge-wc text-black-50'
             };
 
             if (thisCampground.water) {
                 thisCampground.water = 'bi-droplet-fill text-success'
             } else {
-                thisCampground.water = 'bi-droplet text-danger'
+                thisCampground.water = 'bi-droplet text-black-50'
             };
 
             resultsWindowEle.innerHTML += `
